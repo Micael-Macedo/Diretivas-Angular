@@ -1,5 +1,19 @@
 <main>
   <h1>Conteúdo</h1>
   <p fundoAmarelo>Fundo amarelo</p>
+  <button fundoAmarelo>Não terá fundo amarelo</button>
+  <p animationMouse>Animação ao passar o mouse</p>
+
+  <div>
+    {{ color }}
+    <label for="">Azul</label>
+    <input type="radio" name="highlight" id="highlight" (click)="color = 'blue'">
+    <label for="">Vermelho</label>
+    <input type="radio" name="highlight" id="highlight" (click)="color = 'red'">
+    <label for="">Amarelo</label>
+    <input type="radio" name="highlight" id="highlight" (click)="color = 'yellow'">
+
+    <p [appHighlight]="color">Texto cor</p>
+  </div>
 </main>
 <router-outlet></router-outlet>
