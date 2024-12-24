@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FundoAmareloDirective } from './shared/fundo-amarelo.directive';
-import { AnimationMouseDirective } from './shared/animation-mouse.directive';
-import { HighlightDirective } from './shared/highlight/highlight.directive';
+import { AppModule } from './app.module';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FundoAmareloDirective, AnimationMouseDirective, HighlightDirective],
+  imports: [RouterOutlet, AppModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

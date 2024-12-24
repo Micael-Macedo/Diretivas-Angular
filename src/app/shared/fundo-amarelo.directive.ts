@@ -1,12 +1,15 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, HostBinding } from '@angular/core';
 
 @Directive({
   selector: 'p[fundoAmarelo]'
 })
 export class FundoAmareloDirective {
 
-  constructor(private _elementRef: ElementRef) {
-    this._elementRef.nativeElement.style.backgroundColor = "yellow"
+  constructor() {
+    this.backgroundColor = 'yellow'
   }
+
+  @HostBinding('style.backgroundColor') backgroundColor: string = ''
+  @HostBinding('style.transition') transition: string = ''
 
 }

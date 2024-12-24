@@ -1,12 +1,12 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[animationMouse]'
 })
 export class AnimationMouseDirective {
 
-  constructor(private el:ElementRef) {
-    el.nativeElement.style.transition = '0.5s'
+  constructor() {
+    this.transitionTime = '0.5s'
   }
 
   @HostListener('mouseenter') onMouseEnter(){
@@ -16,9 +16,14 @@ export class AnimationMouseDirective {
     this.highlight('')
   }
 
+  @HostBinding('style.backgroundColor') backgroundColor: string = ''
+  @HostBinding('style.transition') transitionTime: string = ''
+
   private highlight(color: string){
-    this.el.nativeElement.style.backgroundColor = color
+    this.backgroundColor = color
   }
+
+
 
 
 }

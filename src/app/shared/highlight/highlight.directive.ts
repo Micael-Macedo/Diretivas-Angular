@@ -1,11 +1,13 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appHighlight]'
 })
 export class HighlightDirective {
 
-  constructor(private el:ElementRef) { }
+  constructor() {
+        this.transition = '0.5s'
+  }
 
   @Input() appHighlight: string = ''
 
@@ -19,7 +21,11 @@ export class HighlightDirective {
     this.highlight('')
   }
 
+  @HostBinding('style.transition') transition: string = ''
+  @HostBinding('style.background-color') backgroundColor: string = ''
+
+
   private highlight(color: string){
-    this.el.nativeElement.style.backgroundColor = color
+    this.backgroundColor = color
   }
 }
