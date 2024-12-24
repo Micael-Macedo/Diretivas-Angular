@@ -9,10 +9,12 @@ export class HighlightDirective {
 
   @Input() appHighlight: string = ''
 
+  @Input() defaultColor: string = ''
+
   @HostListener('mouseenter') onMouseEnter(){
-    this.highlight(this.appHighlight || 'red ')
+    this.highlight(this.appHighlight || this.defaultColor || 'red ')
   }
-  
+
   @HostListener('mouseleave') onMouseLeave(){
     this.highlight('')
   }

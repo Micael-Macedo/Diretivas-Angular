@@ -6,14 +6,19 @@
 
   <div>
     {{ color }}
+    <br>
     <label for="">Azul</label>
     <input type="radio" name="highlight" id="highlight" (click)="color = 'blue'">
+    <br>
     <label for="">Vermelho</label>
     <input type="radio" name="highlight" id="highlight" (click)="color = 'red'">
+    <br>
     <label for="">Amarelo</label>
     <input type="radio" name="highlight" id="highlight" (click)="color = 'yellow'">
+    <br>
 
     <p [appHighlight]="color">Texto cor</p>
+    <p [appHighlight]="color" defaultColor="green">Cor padrão</p>
   </div>
 </main>
 <router-outlet></router-outlet>
