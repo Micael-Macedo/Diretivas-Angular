@@ -7,7 +7,6 @@ import { FundoAmareloDirective } from './shared/fundo-amarelo.directive';
   declarations: [],
   imports: [
     CommonModule,
-    FundoAmareloDirective
-  ]
+  ],
 })
 export class AppModule { }
